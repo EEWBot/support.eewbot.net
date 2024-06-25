@@ -1,0 +1,20 @@
+name: shellcheck
+on:
+  pull_request:
+    paths:
+      - 'build.sh'
+      - '.github/workflows/shellcheck.yml'
+
+jobs:
+  shellcheck:
+    name: runner / shellcheck
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4.1.7
+      - name: shellcheck
+        uses: reviewdog/action-shellcheck@v1.23.0
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
+          filter_mode: nofilter
+          fail_on_error: true

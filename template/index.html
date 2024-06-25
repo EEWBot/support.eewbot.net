@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang=en>
+	<head>
+		<meta charset=UTF-8>
+		<meta name=viewport content="width=device-width, initial-scale=1.0">
+		<meta property=og:type content=website>
+		<meta property=og:title content="EEWBot InviteLink">
+		<meta property=og:site_name content=EEWBot>
+		<meta property=og:image content=https://support.eewbot.net/imgs/ogp.png?RESOURCES_VERSION>
+		<meta name=twitter:card content=summary_large_image>
+		<link rel=icon href=/imgs/icon.png?RESOURCES_VERSION>
+		<title>EEWBot Support (Redirecting)</title>
+		<style>
+			:root {
+				--image-size: min(30vh, 90vw);
+				--border: calc( var(--image-size) * 0.05 );
+				--width: calc( var(--image-size) * 0.5 + var(--border) );
+			}
+			body {
+				background-color: white;
+			}
+			#loading > * {
+				width: var(--width);
+				height: var(--width);
+				background-color: white;
+			}
+			#loading div:nth-child(1) {
+				transform: translateX(calc( var(--border) * -1)) translateY(calc( var(--border) * -1));
+			}
+			#loading div:nth-child(2) {
+				transform: translateX(calc( var(--border) * -1 + var(--width) )) translateY(calc( var(--border) * -1));
+			}
+			@keyframes rotation {
+				0% {
+					transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+			#loading {
+				animation: rotation 1.5s linear infinite;
+				position: absolute;
+				top: calc( (100vh - var(--image-size)) / 2 - var(--border));
+				left: calc( (100vw - var(--image-size)) / 2 - var(--border));
+				width: var(--image-size);
+				height: var(--image-size);
+				border-radius: 100%;
+				border: var(--border) solid #02518c;
+			}
+			img {
+				position: absolute;
+				top: calc( (100vh - var(--image-size)) / 2 );
+				left: calc( (100vw - var(--image-size)) / 2 );
+				width: var(--image-size);
+				height: var(--image-size);
+			}
+		</style>
+	</head>
+	<body onload="location.replace('https://discord.gg/upt9n86ctG')">
+		<div id=loading><div></div><div></div></div>
+		<img src="data:image/png;base64,INVITE_ICON_BASE64">
+	</body>
+</html>
